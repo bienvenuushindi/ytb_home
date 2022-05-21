@@ -5,24 +5,265 @@
     <title>YouTube's video player page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div id="app" >
-    <section id="navbar" class="bg-info">
-        Hello Nav bar
-    </section>
-
-    <div class="">
+<div id="app">
+    <section id="navbar" class="bg-shadow bg-white px-2 py-3">
         <div class="row">
-            <section class="col-8  bg-success" id="video">col-8
-                <div id="frame">Video's frame</div>
-                <div id="controls">Video's controls</div>
-                <div id="channel-info">Video's owner</div>
-                <div id="comments">Video's comments</div>
+            <div class="col-3 " style="font-size: 1.2em">
+                <div><i class="fa fa fa-bars"></i> <span
+                        style="background-color: #FF0000;margin-left: 2rem;margin-right: .5rem;border-radius: .3rem"
+                        class="text-white "><i class="fa fa fa-play px-2 "></i></span>YouTube
+                </div>
+
+            </div>
+            <div class="col-5 ">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search"
+                           aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text"><i class="fa fa fa-search"></i></span>
+                </div>
+            </div>
+            <div class="col-2  offset-md-2 text-end">
+                <div class="row px-4" style="font-size: 1.2em">
+                    <div class="col-3 pt-2"><span><i class="fa fa fa-ellipsis-v"></i> <i
+                            class="fa fa fa-ellipsis-v"></i> <i class="fa fa fa-ellipsis-v"></i></span></div>
+                    <div class="col-3 pt-2"><span><i class="fa fa fa-ellipsis-v"></i></span></div>
+                    <div class="col-6"><span> <button type="button" class="btn btn-outline-primary"
+                                                      style="border-radius: 0"><i class="fa fa fa-user"></i> &nbsp;SIGN IN</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="" style="width: 90% ;margin: auto">
+        <div class="row">
+            <section class="col-8  bg-light" id="video">
+                <div class="my-4">
+                    <div id="frame">
+                        <iframe class="w-100" height="600" src="https://www.youtube.com/embed/lJIrF4YjHfQ"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                    <div id="caption-controls">
+                        <div id="caption" class="py-2 font-weight-bold" style="font-size: 1.3em;">Embed videos and
+                            playlists
+                        </div>
+                        <div id="controls" class="py-1">
+                            <div class="row">
+                                <div class="col-6  text-muted">
+                                    <span>370,742 views</span> |
+                                    <span>May 13, 2016</span>
+                                </div>
+                                <div class="col-6 text-end text-uppercase">
+                                    <div class="row px-4">
+                                        <div class="col-2"><span><i class="fa fa fa-thumbs-o-up"></i>1.3K </span></div>
+                                        <div class="col-3"><span><i class="fa fa fa-thumbs-o-down"></i>DISlike</span>
+                                        </div>
+                                        <div class="col-3"><span><i class="fa fa fa-share"></i> Share</span></div>
+                                        <div class="col-3"><span><i class="fa fa fa-save"></i> save</span></div>
+                                        <div class="col-1"><i class="fa fa fa-ellipsis-h"></i></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="channel-info">
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="card border-0 mb-3" style="">
+                                    <div class="row g-0">
+                                        <div class="col-md-1">
+                                            <img src="./assets/img/youtube.png" class="img-fluid rounded-start p-3"
+                                                 alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h6 class="card-title">
+                                                    YouTube Viewers<br>
+                                                    <span class="text-muted small">9.12M subscribers</span>
+                                                </h6>
+                                                <p class="card-text text-muted">This is a wider card with supporting
+                                                    text below as a natural</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 text-end ">
+                                <button type="button" class="btn text-white border-radius-none"
+                                        style="background-color: #FF0000;border-radius: 0">SUBSCRIBE
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="comments">Video's comments</div>
+                </div>
+
             </section>
-            <section class="col-4 bg-warning" id="sidebar">col-4
-                <div id="title"></div>
-                <div id="related-video"></div>
+            <section class="col-4" id="sidebar">
+                <div class="mt-4">
+                    <div id="title"></div>
+                    <ul id="videos-list list-group ">
+                        <li class="video list-group-item">
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-1324909380-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-95442265-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-636772794-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-687912794-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-1326062460-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-1363065339-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-1327364098-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-1326062460-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-95442265-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 mb-3" style="max-width: 540px;">
+                                <div class="row ">
+                                    <div class="col-md-4 mh-100">
+                                        <img src="assets/img/istockphoto-1363065339-170667a.jpg" class="img-fluid rounded-start h-100 w-100" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h4 class="card-title small">The Voice - Best Blind Auditions Worldwide (№8)
+                                                Quichotte Quichotte</h4>
+                                            <p class="card-text small my-0">Chanel name</p>
+                                            <span class="card-text"><small class="text-muted">1.4M views . 5months ago</small></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </div>
     </div>
